@@ -4,12 +4,12 @@ argocd-apps:
       namespace: argocd
       project: default
       source:
-        repoURL: https://github.com/Hamidzak/k8s-helm.git
+        repoURL: https://github.com/Hamidzak/k8s-apps.git
         targetRevision: main
-        path: charts/nginx
+        path: app-of-apps/nginx
       destination:
         server: https://kubernetes.default.svc
-        namespace: default
+        namespace: nginx
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
