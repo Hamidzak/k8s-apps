@@ -6,7 +6,7 @@ argocd-apps:
       source:
         repoURL: https://github.com/Hamidzak/k8s-apps.git
         targetRevision: main
-        path: app-of-apps/nginx
+        path: argocd/app-of-apps/nginx
       destination:
         server: https://kubernetes.default.svc
         namespace: nginx
