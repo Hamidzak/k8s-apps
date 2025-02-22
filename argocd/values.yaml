@@ -1,0 +1,27 @@
+global:
+  image:
+    tag: v2.14.2
+  logging:
+    level: info
+
+server:
+  service:
+    type: ClusterIP
+
+repoServer:
+  resources:
+    requests:
+      memory: "125Mi"
+      cpu: "20m"
+    limits:
+      memory: "512Mi"
+      cpu: "200m"
+
+applicationController:
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "200m"
+    limits:
+      memory: "1Gi"
+      cpu: "500m"

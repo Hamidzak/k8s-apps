@@ -1,0 +1,7 @@
+applications:
+  - name: argocd
+    namespace: argocd
+    source:
+      repoURL: https://github.com/Hamidzak/k8s-apps.git
+      path: argocd
+      targetRevision: main
