@@ -1,0 +1,37 @@
+suite: test resource limits and requests
+templates:
+  - deployment.yaml
+tests:
+  - it: Should set correct resource limits
+    set:
+      resources:
+        limits:
+          cpu: "100m"
+          memory: "128Mi"
+          ephemeral-storage: null
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].resources.limits.cpu
+          value: "100m"
+      - equal:
+          path: spec.template.spec.containers[0].resources.limits.memory
+          value: "128Mi"
+      - isNull:
+          path: spec.template.spec.containers[0].resources.limits.ephemeral-storage
+
+  - it: Should set correct resource requests
+    set:
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "64Mi"
+          ephemeral-storage: null
+    asserts:
+      - equal:
+          path: spec.template.spec.containers[0].resources.requests.cpu
+          value: "50m"
+      - equal:
+          path: spec.template.spec.containers[0].resources.requests.memory
+          value: "64Mi"
+      - isNull:
+          path: spec.template.spec.containers[0].resources.requests.ephemeral-storage
