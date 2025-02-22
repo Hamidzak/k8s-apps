@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd
+  name: app-of-apps
   namespace: argocd
 spec:
   destination:
@@ -9,9 +9,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    helm:
-      valueFiles:
-        - values.yaml
     repoURL: https://github.com/Hamidzak/k8s-apps.git
-    path: argocd
+    path: applications
     targetRevision: main
