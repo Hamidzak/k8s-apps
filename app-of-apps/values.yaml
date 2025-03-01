@@ -4,7 +4,7 @@ argocd-apps:
       namespace: argocd
       project: default
       source:
-        repoURL: https://github.com/k8s-apps.git  
+        repoURL: https://github.com/Hamidzak/k8s-apps.git  
         targetRevision: main
         path: argocd
         helm:
