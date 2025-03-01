@@ -1,0 +1,9 @@
+configs:
+  params:
+    server.insecure: true  # Disables TLS requirement for testing
+  cm:
+    admin.enabled: "true"   # Enables admin access
+
+server:
+  service:
+    type: ClusterIP  # Service is only accessible within the cluster
