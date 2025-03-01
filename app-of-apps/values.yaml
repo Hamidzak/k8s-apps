@@ -1,0 +1,15 @@
+argocd-apps:
+  applications:
+    - name: argocd
+      namespace: argocd
+      project: default
+      source:
+        repoURL: https://github.com/k8s-apps.git  
+        targetRevision: main
+        path: argocd
+        helm:
+          valueFiles:
+            - values.yaml  # Specify value files if you have custom configurations
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
